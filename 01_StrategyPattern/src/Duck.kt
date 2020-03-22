@@ -29,5 +29,3 @@ class MallardDuck() : Duck() {
         println("저는 물오리입니다.")
     }
 }
-
-public 
