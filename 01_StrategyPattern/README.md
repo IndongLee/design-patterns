@@ -6,6 +6,16 @@
 
 <br />
 
+![Strategy](README.assets/Strategy.png)
+
+- Strategy
+  - 인터페이스나 추상 클래스로 외부에서 동일한 방식으로 알고리즘을 호출하는 방법을 명시
+- ConcreteStrategy
+  - 스트래티지 패턴에서 명시한 알고리즘을 실제로 구현한 클래스
+- Context
+  - 스트래티지 패턴을 이용하는 역할을 수행한다.
+  - 필요에 따라 동적으로 구체적인 전략을 바꿀 수 있도록 setter 메서드(‘집약 관계’)를 제공한다.
+<br />
 <br />
 
 ### 상속관계를 구현할 때의 문제점
@@ -164,19 +174,19 @@ interface QuackBehavior {
     fun quack()
 }
 
-class Quack() : QuackBehavior {
+class Quack : QuackBehavior {
     override fun quack() {
         println("꽥꽥!!")
     }
 }
 
-class Squack() : QuackBehavior {
+class Squack : QuackBehavior {
     override fun quack() {
         println("찍찍!")
     }
 }
 
-class MuteQuack() : QuackBehavior {
+class MuteQuack : QuackBehavior {
     override fun quack() {
         println("...")
     }
@@ -214,7 +224,7 @@ abstract class Duck {
     }
 }
 
-class MallardDuck() : Duck() {
+class MallardDuck : Duck() {
     override val quackBehavior: QuackBehavior = Quack()
     override val flyBehavior: FlyBehavior = FlyWithWings()
 

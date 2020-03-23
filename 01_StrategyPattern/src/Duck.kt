@@ -21,7 +21,7 @@ abstract class Duck {
 
 }
 
-class MallardDuck() : Duck() {
+class MallardDuck : Duck() {
     override val quackBehavior: QuackBehavior = Quack()
     override val flyBehavior: FlyBehavior = FlyWithWings()
 

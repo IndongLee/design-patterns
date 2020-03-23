@@ -1,18 +1,18 @@
 package Behavior
 
-class Quack() : QuackBehavior {
+class Quack : QuackBehavior {
     override fun quack() {
         println("꽥꽥!!")
     }
 }
 
-class Squack() : QuackBehavior {
+class Squack : QuackBehavior {
     override fun quack() {
         println("찍찍!")
     }
 }
 
-class MuteQuack() : QuackBehavior {
+class MuteQuack : QuackBehavior {
     override fun quack() {
         println("...")
     }
