@@ -1,19 +1,24 @@
 package pizza
 
-interface Pizza {
-    fun prepare() {
+abstract class Pizza {
+    abstract val name: String
+    abstract val dough: String
+    abstract val sauce: String
+    val toppings = arrayListOf<String>()
+
+    open fun prepare() {
 
     }
 
-    fun bake() {
+    open fun bake() {
 
     }
 
-    fun cut() {
+    open fun cut() {
 
     }
 
-    fun box() {
+    open fun box() {
 
     }
 }

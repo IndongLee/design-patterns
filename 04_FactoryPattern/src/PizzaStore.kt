@@ -1,16 +1,16 @@
 import factory.SimplePizzaFactory
-import pizza.CheesePizza
-import pizza.GreekPizza
-import pizza.PepperoniPizza
 import pizza.Pizza
 
-class PizzaStore(val factory: SimplePizzaFactory) {
+abstract class PizzaStore {
     fun orderPizza(type: String): Pizza? {
-        return factory.createPizza(type)?.apply {
+        return createPizza(type)?.apply {
             prepare()
             bake()
             cut()
             box()
         }
     }
+
+    // 팩토리 역할을 하는 메소드
+    abstract fun createPizza(type: String): Pizza?
 }

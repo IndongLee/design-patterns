@@ -1,16 +1,16 @@
 package factory
 
-import pizza.CheesePizza
-import pizza.GreekPizza
-import pizza.PepperoniPizza
+import pizza.ChicagoStyleCheesePizza
+import pizza.ChicagoStyleClamPizza
+import pizza.ChicagoStylePepperoniPizza
 import pizza.Pizza
 
 class SimplePizzaFactory() {
     fun createPizza(type: String): Pizza? {
         return when(type) {
-            "cheese" -> CheesePizza()
-            "greek" -> GreekPizza()
-            "pepperoni" -> PepperoniPizza()
+            "cheese" -> ChicagoStyleCheesePizza()
+            "greek" -> ChicagoStyleClamPizza()
+            "pepperoni" -> ChicagoStylePepperoniPizza()
             else -> null
         }
     }
