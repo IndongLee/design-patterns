@@ -1,8 +1,5 @@
-package factory
+package factory.pizza
 
-import pizza.ChicagoStyleCheesePizza
-import pizza.ChicagoStyleClamPizza
-import pizza.ChicagoStylePepperoniPizza
 import pizza.Pizza
 
 class SimplePizzaFactory() {

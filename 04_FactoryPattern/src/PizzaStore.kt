@@ -1,4 +1,3 @@
-import factory.SimplePizzaFactory
 import pizza.Pizza
 
 abstract class PizzaStore {
