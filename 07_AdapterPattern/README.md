@@ -21,6 +21,36 @@
 
 <br />
 
+#### 최소 지식 원칙 
+
+> 정말 친한 친구하고만 얘기하라
+
+시스템을 디자인할 때, 어떤 객체든 그 객체와 상호작용을 하는 클래스의 개수에 주의해야 하며, 그런 객체들과 어떤 식으로 상호작용을 하는지에도 주의를 기울여야 한다.
+
+다음 네 종류 객체의 메소드만을 호출한다.
+
+1. 객체 자체.
+2. 메소드에 매개 변수로 전달된 객체.
+3. 그 메소드에서 생성하거나 인스턴스를 만든 객체.
+4. 그 객체에 속하는 구성 요소.
+
+```kotlin
+// 바람직하지 않은 방법
+fun getTemp(): Float {
+    Thermometer thermometer = station.getThermometer()
+    return thermometer.getTemperature()
+}
+
+// 바람직한 방법
+fun getTemp(): Float {
+    return station.getTemperature()
+}
+```
+
+
+
+<br />
+
 <br />
 
 ### 오리 클래스 예시
