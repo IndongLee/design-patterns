@@ -208,15 +208,14 @@ class DinerMenu : Menu {
 ##### 웨이터 코드 고치기
 
 ```kotlin
-class Waiter(private val pancakeHouseMenu: Menu, private val dinerMenu: Menu) {
+class Waiter(private val menus: ArrayList<Menu>) {
 
     fun printMenu() {
-        val pancakeIterator = pancakeHouseMenu.createIterator()
-        val dinerIterator = dinerMenu.createIterator()
-        println("메뉴\n----\n아침메뉴")
-        printMenu(pancakeIterator)
-        println("\n점심메뉴")
-        printMenu(dinerIterator)
+        val menuIterator = menus.iterator()
+        while (menuIterator.hasNext()) {
+            val menu = menuIterator.next()
+            printMenu(menu.createIterator())
+        }
     }
 
     fun printMenu(iterator: Iterator) {
