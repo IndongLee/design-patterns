@@ -49,15 +49,15 @@
 
 ---
 ```kotlin
-class menu.MenuItem(val name: String,
+class MenuItem(val name: String,
                val description: String,
                val vegetarian: Boolean,
                val price: Double) {
 }
 
 
-class menu.PancakeHouseMenu {
-    private val menuItems: ArrayList<menu.MenuItem> = arrayListOf()
+class PancakeHouseMenu {
+    private val menuItems: ArrayList<MenuItem> = arrayListOf()
 
     init {
         addItem("K&B 팬케이크 세트",
@@ -79,16 +79,16 @@ class menu.PancakeHouseMenu {
     }
 
     private fun addItem(name: String, description: String, vegetarian: Boolean, price: Double) {
-        val menuItem = menu.MenuItem(name, description, vegetarian, price)
+        val menuItem = MenuItem(name, description, vegetarian, price)
         menuItems.add(menuItem)
     }
 }
 
 
-class menu.DinerMenu {
+class DinerMenu {
     private val maxItems = 6
     private var numberOfItems = 0
-    private val menuItems = Array<menu.MenuItem?>(maxItems) { null }
+    private val menuItems = Array<MenuItem?>(maxItems) { null }
 
     init {
         addItem("채식주의자용 BLT",
@@ -110,7 +110,7 @@ class menu.DinerMenu {
     }
 
     private fun addItem(name: String, description: String, vegetarian: Boolean, price: Double) {
-        val menuItem = menu.MenuItem(name, description, vegetarian, price)
+        val menuItem = MenuItem(name, description, vegetarian, price)
         if (numberOfItems >= maxItems) {
             error("죄송합니다. 메뉴가 꽉 찼습니다. 더 이상 추가할 수 없습니다.")
         } else {
